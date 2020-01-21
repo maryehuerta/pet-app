@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import Menu from './menu'
+import TodoList from './todolist'
 import './App.css';
+
+const todos = [
+  {
+    id: 1,
+    task: 'Brush Colby',
+    due: new Date('01/31/2020')
+  }
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="ui segment">
+      <Menu></Menu>
+      <div className="ui segment">
+        <TodoList todos={todos}/>
+      </div>
     </div>
   );
 }
